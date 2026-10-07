@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | escape }} · {{ site.title | escape }}</title>
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+<header><a href="{{ '/' | relative_url }}">FDMC</a><span>Documentation review preview</span></header>
+<div class="shell">
+<nav aria-label="Documentation">
+{% assign pages = 'index,getting-started,mg5-interface,phase-space,integration,examples,physics,development,publication' | split: ',' %}
+{% assign labels = 'Overview,Getting started,MG5 interface,Phase space,Integration,Examples,Physics and validation,Development,About this preview' | split: ',' %}
+{% for slug in pages %}
+<a {% if page.url contains slug %}aria-current="page"{% endif %} href="{{ '/' | append: slug | append: '.html' | relative_url }}">{{ labels[forloop.index0] }}</a>
+{% endfor %}
+<a href="{{ site.repository_url }}">Documentation repository</a>
+</nav>
+<main><aside class="preview-notice"><strong>Documentation review preview</strong><br>FDMC is a provisional project name. Content and URLs may change. This is not a software release; the source code is maintained separately in a private repository.</aside>{{ content }}</main>
+</div>
+<footer>FDMC · Fortran + MG5 · Provisional name · Review preview</footer>
+</body>
+</html>

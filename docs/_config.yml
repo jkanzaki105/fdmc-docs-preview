@@ -1,0 +1,6 @@
+title: FDMC documentation preview
+description: Provisional project name · Documentation review preview
+baseurl: /fdmc-docs-preview
+url: https://jkanzaki105.github.io
+repository_url: https://github.com/jkanzaki105/fdmc-docs-preview
+markdown: kramdown
