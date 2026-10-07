@@ -5,6 +5,57 @@ title: Physics and validation
 
 # Physics and validation
 
+## Research context: LCWS2026 abstract
+
+The following research context is adapted from the project team's LCWS2026
+abstract. It describes the broader method and applications; the software examples
+currently documented in Version 0 have a narrower scope.
+
+### Diagram-guided multi-channel integration
+
+Accurate phase-space integration at multi-TeV lepton colliders requires sampling
+that resolves resonance structures and strongly forward-peaked distributions.
+Large gauge cancellations can obscure the physical interpretation of individual
+Feynman diagrams in conventional gauges. In the FD gauge, individual amplitudes
+retain a close correspondence with their associated physical subprocesses.
+The method uses their squared amplitudes as importance-sampling guides for
+individual integration channels. The complete physical amplitude, including
+interference, remains the basis of the observable being integrated.
+
+### Top–Higgs production and a complex top-Yukawa coupling
+
+The applications described in the abstract involve top-quark pair production
+in association with a Higgs boson at lepton colliders, including
+vector-boson-fusion and related channels, within the Standard Model effective
+field theory (SMEFT) with a complex top-Yukawa coupling.
+
+Some of these processes contain lepton-mass singularities arising from
+*t*-channel photon exchange. Accurate integration therefore requires a dedicated
+phase-space parametrization for extremely forward charged leptons.
+
+### Reliable amplitudes in the extreme forward region
+
+The abstract describes modifications to HELAS (HELicity Amplitude Subroutines)
+that allow helicity amplitudes to be evaluated reliably even when the magnitude
+of the squared momentum transfer is as small as the squared electron mass at
+multi-TeV collision energies. These amplitude improvements and the forward-region
+parametrization are complementary parts of the integration method.
+
+The research described in the abstract reports stable and efficient integration
+for these challenging processes, providing a step toward reliable event
+generation for future high-energy lepton-collider studies.
+
+### Relationship to this documentation preview
+
+The Version 0 examples presented here are `emep_emepz` (an integration example)
+and `gg_ggg` (amplitude checks with an unfinished integration mapping).
+The top–Higgs/SMEFT applications and extreme-forward HELAS results described
+above are research context, not additional runnable examples or validation
+benchmarks supplied by this preview. Process-specific results, benchmarks and
+literature references should accompany their eventual software documentation.
+
+## Validation of the Version 0 examples
+
 Version 0 distinguishes implementation checks from physical validation.
 
 | Evidence | Establishes | Does not establish |
