@@ -14,7 +14,8 @@ The software source remains in a separate private repository.
 ## Scientific basis
 
 This project prepares the techniques used in the
-[MCPS paper by Hagiwara et al.](references.html#mcps),
+[“Multichannel phase space (MCPS) with Feynman-diagram-gauge amplitudes”
+by Hagiwara et al.](references.html#mcps),
 *Phys. Rev. D* **114**, 036002 (2026), for software distribution.
 The paper is the primary reference for the method and physics applications.
 
