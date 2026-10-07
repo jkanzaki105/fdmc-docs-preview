@@ -9,8 +9,7 @@ This public repository contains documentation only. The software source and
 its development history remain in a separate private repository.
 
 FDMC is a provisional project name. This preview is intended to support review
-of the page structure, explanations and presentation; it is not a software release
-or an announcement of validated physics results.
+of the page structure, explanations and presentation. It is not a software release and it documents techniques used in the published MCPS paper.
 
 ## Review points
 
@@ -18,7 +17,8 @@ or an announcement of validated physics results.
 - Navigation and page structure.
 - Clarity of the MG5 interface and phase-space explanations.
 - Separation of implementation checks from independent physics validation.
-- Author information and literature references to add before a formal release.
+- Selection of paper processes for the distributed examples.
+- Related references to add alongside the primary MCPS paper.
 
 ## Hosting
 

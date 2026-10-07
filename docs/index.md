@@ -11,6 +11,13 @@ backends. This documentation is a review preview for collaborators. FDMC is a pr
 project name; the name, page structure and wording are open for discussion.
 The software source remains in a separate private repository.
 
+## Scientific basis
+
+This project prepares the techniques used in the
+[MCPS paper by Hagiwara et al.](references.html#mcps),
+*Phys. Rev. D* **114**, 036002 (2026), for software distribution.
+The paper is the primary reference for the method and physics applications.
+
 ## Motivation and approach
 
 Multi-particle processes at multi-TeV lepton colliders can be difficult to
@@ -28,8 +35,8 @@ interference between diagrams.
 The broader research programme addresses associated top-quark pair and Higgs
 production, including vector-boson-fusion and related channels, and the reliable
 treatment of extremely forward charged leptons. See
-[Research context](physics.html#research-context-lcws2026-abstract) for the
-scope described in the LCWS2026 abstract.
+[Method and physics applications](physics.html#method-and-physics-applications) for the
+applications studied in the MCPS paper.
 
 ## Version 0 documentation
 

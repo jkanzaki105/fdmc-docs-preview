@@ -1,0 +1,18 @@
+---
+layout: null
+---
+{% for ref in site.data.references %}@article{ {{ ref.key }},
+    author = "{{ ref.author }}",
+    title = "{ {{ ref.title }} }",
+    eprint = "{{ ref.eprint }}",
+    archivePrefix = "{{ ref.archivePrefix }}",
+    primaryClass = "{{ ref.primaryClass }}",
+    reportNumber = "{{ ref.reportNumber }}",
+    doi = "{{ ref.doi }}",
+    journal = "{{ ref.journal }}",
+    volume = "{{ ref.volume }}",
+    number = "{{ ref.number }}",
+    pages = "{{ ref.pages }}",
+    year = "{{ ref.year }}"
+}
+{% endfor %}

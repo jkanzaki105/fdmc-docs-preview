@@ -10,8 +10,8 @@
 <header><a href="{{ '/' | relative_url }}">FDMC</a><span>Documentation review preview</span></header>
 <div class="shell">
 <nav aria-label="Documentation">
-{% assign pages = 'index,getting-started,mg5-interface,phase-space,integration,examples,physics,development,publication' | split: ',' %}
-{% assign labels = 'Overview,Getting started,MG5 interface,Phase space,Integration,Examples,Physics and validation,Development,About this preview' | split: ',' %}
+{% assign pages = 'index,getting-started,mg5-interface,phase-space,integration,examples,physics,references,development,publication' | split: ',' %}
+{% assign labels = 'Overview,Getting started,MG5 interface,Phase space,Integration,Examples,Physics and validation,References,Development,About this preview' | split: ',' %}
 {% for slug in pages %}
 <a {% if page.url contains slug %}aria-current="page"{% endif %} href="{{ '/' | append: slug | append: '.html' | relative_url }}">{{ labels[forloop.index0] }}</a>
 {% endfor %}
