@@ -26,12 +26,19 @@ integrate accurately because of complicated resonance structures, strongly
 forward-peaked distributions and large gauge cancellations among individual
 Feynman diagrams.
 
-Our approach uses multi-channel phase-space integration guided by individual
-Feynman diagrams evaluated in the Feynman-diagram (FD) gauge. In this gauge,
-individual amplitudes retain a close correspondence with the associated physical
-subprocesses. Their squared amplitudes guide importance sampling in the relevant
-regions of phase space, while the physical prediction includes the required
-interference between diagrams.
+The starting point is **single-diagram-enhanced (SDE) multi-channel integration**,
+introduced by Fabio Maltoni and Tim Stelzer in Section 2 of
+[“MadEvent: Automatic event generation with MadGraph”](references.html#madevent).
+It splits the full integrand into positive diagram-guided contributions that can
+be integrated separately, with sampling effort adapted to each channel.
+This idea underpins MadEvent and subsequent MadGraph event-generation frameworks.
+
+The MCPS paper brings this strategy together with the **Feynman-diagram (FD) gauge**.
+Large gauge cancellations can make individual diagram peaks poor sampling guides,
+particularly at high energies. FD-gauge amplitudes avoid those cancellations,
+allowing the original SDE idea to work effectively in these demanding regimes.
+Physical interference is retained in the full integrand.
+See [the method and its gauge dependence](physics.html#single-diagram-enhanced-integration-and-the-fd-gauge).
 
 The broader research programme addresses associated top-quark pair and Higgs
 production, including vector-boson-fusion and related channels, and the reliable

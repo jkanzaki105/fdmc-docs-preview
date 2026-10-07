@@ -26,6 +26,7 @@ Citation key: `{{ ref.key }}`.
 
 ## Related literature
 
-Related references on FD gauge, HELAS, MG5 and integration methods will be
+The MadEvent paper above establishes the original SDE method. Further references
+on FD gauge, HELAS, MG5 and integration methods will be
 added here as the corresponding documentation is reviewed. Each reference
 should be linked from the section that uses it, with its role explained.

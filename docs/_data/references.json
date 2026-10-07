@@ -16,5 +16,20 @@
     "pages": "036002",
     "year": "2026",
     "role": "Primary paper describing the method and physics applications documented here."
+  },
+  {
+    "key": "Maltoni:2002qb",
+    "id": "madevent",
+    "author": "Maltoni, Fabio and Stelzer, Tim",
+    "display_authors": "F. Maltoni and T. Stelzer",
+    "title": "MadEvent: Automatic event generation with MadGraph",
+    "eprint": "hep-ph/0208156",
+    "archivePrefix": "arXiv",
+    "doi": "10.1088/1126-6708/2003/02/027",
+    "journal": "JHEP",
+    "volume": "02",
+    "pages": "027",
+    "year": "2003",
+    "role": "Section 2 introduces single-diagram-enhanced multi-channel integration, the foundation on which the MCPS paper builds. Fabio Maltoni is also a coauthor of the MCPS paper."
   }
 ]

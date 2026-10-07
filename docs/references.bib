@@ -6,12 +6,12 @@ layout: null
     title = "{ {{ ref.title }} }",
     eprint = "{{ ref.eprint }}",
     archivePrefix = "{{ ref.archivePrefix }}",
-    primaryClass = "{{ ref.primaryClass }}",
-    reportNumber = "{{ ref.reportNumber }}",
+{% if ref.primaryClass %}    primaryClass = "{{ ref.primaryClass }}",{% endif %}
+{% if ref.reportNumber %}    reportNumber = "{{ ref.reportNumber }}",{% endif %}
     doi = "{{ ref.doi }}",
     journal = "{{ ref.journal }}",
     volume = "{{ ref.volume }}",
-    number = "{{ ref.number }}",
+{% if ref.number %}    number = "{{ ref.number }}",{% endif %}
     pages = "{{ ref.pages }}",
     year = "{{ ref.year }}"
 }

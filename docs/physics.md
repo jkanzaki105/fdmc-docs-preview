@@ -14,16 +14,38 @@ used in that paper for software distribution.
 
 ## Method and physics applications
 
-### Diagram-guided multi-channel integration
+### Single-diagram-enhanced integration and the FD gauge
 
-Accurate phase-space integration at multi-TeV lepton colliders requires sampling
-that resolves resonance structures and strongly forward-peaked distributions.
-Large gauge cancellations can obscure the physical interpretation of individual
-Feynman diagrams in conventional gauges. In the FD gauge, individual amplitudes
-retain a close correspondence with their associated physical subprocesses.
-The method uses their squared amplitudes as importance-sampling guides for
-individual integration channels. The complete physical amplitude, including
-interference, remains the basis of the observable being integrated.
+Section 2 of [Maltoni and Stelzer's MadEvent paper](references.html#madevent)
+introduces **single-diagram-enhanced (SDE) multi-channel integration**.
+For diagram amplitudes Aᵢ and total amplitude A = Σᵢ Aᵢ, define
+
+```text
+wᵢ = |Aᵢ|² / Σⱼ |Aⱼ|²
+fᵢ = wᵢ |A|² = |Aᵢ|² R
+R  = |Σⱼ Aⱼ|² / Σⱼ |Aⱼ|²
+Σᵢ fᵢ = |A|²
+```
+
+These positive contributions are integrated separately with diagram-specific
+mappings. Each channel can receive sampling effort appropriate to its convergence.
+The decomposition preserves interference; it is not an incoherent approximation.
+This avoids the coupled sampling-density weights of conventional multi-channel
+optimization. Statistical independence of sampled integrations does not mean
+absence of physical interference.
+
+The [MCPS paper](references.html#mcps) explains why gauge choice matters:
+large cancellations in conventional gauges can spoil diagram-based sampling,
+especially in enhanced high-energy regions. The MadGraph conventions discussed
+there use Feynman gauge for photons/gluons and unitary gauge for weak bosons.
+FD gauge avoids the large gauge cancellations and keeps R of order unity in
+the configurations studied. Together with suitable singularity mappings, this
+lets the original SDE method realize its intended efficiency. Physical
+interference remains included.
+
+Fabio Maltoni, coauthor of the original MadEvent paper, is also a coauthor of
+the MCPS paper. The approach builds directly on his and Tim Stelzer's integration
+method.
 
 ### Top–Higgs production and a complex top-Yukawa coupling
 
