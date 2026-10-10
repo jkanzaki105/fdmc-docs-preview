@@ -5,9 +5,19 @@ title: FDMC Version 0
 
 # FDMC — documentation preview
 
-FDMC provides Fortran Monte Carlo calculations built around MG5-generated
-helicity amplitudes, diagram-dependent phase-space channels and integration
-backends. This documentation is a review preview for collaborators. FDMC is a provisional
+FDMC (**Feynman-Diagram Gauge Monte Carlo**) is a Fortran framework for
+Monte Carlo calculations based on helicity amplitudes in the
+**Feynman-diagram (FD) gauge**. By avoiding large artificial gauge cancellations
+among diagrams, the FD gauge makes individual diagram amplitudes effective
+guides for diagram-dependent phase-space channels and importance sampling,
+used together with numerical integration backends.
+
+For the introduction of this approach to electroweak helicity amplitudes, see
+[Chen, Hagiwara, Kanzaki and Mawatari, “Helicity amplitudes without gauge
+cancellation for electroweak processes”](references.html#fd-gauge-ew).
+Physical interference is retained in the full amplitude.
+
+This documentation is a review preview for collaborators. FDMC is a provisional
 project name; the name, page structure and wording are open for discussion.
 The software source remains in a separate private repository.
 

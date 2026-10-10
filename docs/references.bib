@@ -13,6 +13,7 @@ layout: null
     volume = "{{ ref.volume }}",
 {% if ref.number %}    number = "{{ ref.number }}",{% endif %}
     pages = "{{ ref.pages }}",
-    year = "{{ ref.year }}"
+    year = "{{ ref.year }}"{% if ref.note %},
+    note = "{{ ref.note }}"{% endif %}
 }
 {% endfor %}

@@ -38,6 +38,8 @@ The [MCPS paper](references.html#mcps) explains why gauge choice matters:
 large cancellations in conventional gauges can spoil diagram-based sampling,
 especially in enhanced high-energy regions. The MadGraph conventions discussed
 there use Feynman gauge for photons/gluons and unitary gauge for weak bosons.
+The [electroweak FD-gauge construction of Chen et al.](references.html#fd-gauge-ew)
+provides amplitudes without artificial gauge cancellation.
 FD gauge avoids the large gauge cancellations and keeps R of order unity in
 the configurations studied. Together with suitable singularity mappings, this
 lets the original SDE method realize its intended efficiency. Physical

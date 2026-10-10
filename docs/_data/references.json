@@ -31,5 +31,24 @@
     "pages": "027",
     "year": "2003",
     "role": "Section 2 introduces single-diagram-enhanced multi-channel integration, the foundation on which the MCPS paper builds. Fabio Maltoni is also a coauthor of the MCPS paper."
+  },
+  {
+    "key": "Chen:2022gxv",
+    "id": "fd-gauge-ew",
+    "author": "Chen, Junmou and Hagiwara, Kaoru and Kanzaki, Junichi and Mawatari, Kentarou",
+    "display_authors": "J. Chen, K. Hagiwara, J. Kanzaki and K. Mawatari",
+    "title": "Helicity amplitudes without gauge cancellation for electroweak processes",
+    "eprint": "2203.10440",
+    "archivePrefix": "arXiv",
+    "primaryClass": "hep-ph",
+    "reportNumber": "KEK-TH-2403, IPMU22-0008",
+    "doi": "10.1140/epjc/s10052-023-12093-7",
+    "journal": "Eur. Phys. J. C",
+    "volume": "83",
+    "number": "10",
+    "pages": "922",
+    "year": "2023",
+    "note": "Erratum: Eur. Phys. J. C 84, 97 (2024)",
+    "role": "Introduces the electroweak helicity-amplitude construction without artificial gauge cancellations underlying the FD-gauge approach."
   }
 ]

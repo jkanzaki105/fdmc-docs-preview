@@ -19,6 +19,8 @@ the documentation describes the software and its examples.
 
 {{ ref.role }}
 
+{% if ref.note %}{{ ref.note }}.{% endif %}
+
 Citation key: `{{ ref.key }}`.
 {% endfor %}
 
