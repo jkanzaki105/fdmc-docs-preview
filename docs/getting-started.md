@@ -20,13 +20,17 @@ repository. Run them from the software repository root.
 ## Clean build
 
 ```sh
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCUBA_ROOT=/path/to/cuba/prefix
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DFDMC_FORTRAN_ENABLE_BASES=OFF \
+  -DFDMC_FORTRAN_ENABLE_CUBA=ON -DCUBA_ROOT=/path/to/cuba/prefix
 cmake --build build -j 4
 ctest --test-dir build --output-on-failure
 ```
 
-By default both processes are built and external Cuba is required. A process-specific
-build can use `-DFDMC_FORTRAN_PROCESS=emep_emepz` or `gg_ggg`; `ALL` is the
+By default all three processes are built; Cuba is optional and disabled by default.
+BASES defaults on when its private source directory exists. The command above
+selects a public-compatible Cuba build. A process-specific build can select
+`emep_emepz`, `gg_ggg` or `mummup_vmvmxttxh` with
+`-DFDMC_FORTRAN_PROCESS=<name>`; `ALL` is the
 default. An unknown name fails at configuration and lists available processes.
 
 CMake writes generated Fortran, object files and modules under `build/`.
@@ -38,7 +42,7 @@ Keep build output outside the source libraries.
 build/processes/emep_emepz/emep_emepz_fortran_cuba_integrate \
   processes/emep_emepz/cards/param_card.dat \
   processes/emep_emepz/cards/amplitude_config_list.dat \
-  5 0 1000 100000 0.02 12345 10000 10000 1000 1
+  5 0 1000 100000 0.02 12345 10000 10000 1000 0
 ```
 
 Arguments after the cards are graph, configuration, centre-of-mass energy in
@@ -50,4 +54,5 @@ Keep `param_card.dat` and `ident_card.dat` together: the MG5 model reader needs
 both. Model initialization may write `param.log` in the working directory.
 
 Cuba must be installed separately. Use [Integration](integration.html) for
-managed runs. Set `-DFDMC_FORTRAN_ENABLE_CUBA=OFF` for amplitude-only builds. Use [Physics and validation](physics.html) before interpreting results.
+managed runs. Disable both `FDMC_FORTRAN_ENABLE_CUBA` and `FDMC_FORTRAN_ENABLE_BASES` for
+backend-free builds. See [publication status](publication.html) for source availability. Use [Physics and validation](physics.html) before interpreting results.

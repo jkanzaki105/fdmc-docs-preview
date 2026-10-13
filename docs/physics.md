@@ -74,12 +74,13 @@ generation for future high-energy lepton-collider studies.
 
 ### Relationship to this documentation preview
 
-The Version 0 examples presented here are `emep_emepz` (an integration example)
-and `gg_ggg` (amplitude checks with an unfinished integration mapping).
-The top–Higgs/SMEFT applications and extreme-forward HELAS results described
-above are research context, not additional runnable examples or validation
-benchmarks supplied by this preview. The choice of distributed process examples will be reviewed with collaborators;
-the present examples are unchanged pending that discussion.
+The integrated local examples include `emep_emepz`, the MG5 3.8.1
+`mummup_vmvmxttxh` 2→5 integration example, and `gg_ggg` amplitude checks
+with an unfinished integration mapping. The new top–Higgs example does not
+supply all SMEFT applications or extreme-forward HELAS benchmarks discussed
+above. The choice of processes for a future release remains open for review.
+See the [13 October 2026 validation record](validation-20261013.html) for
+sampled comparisons, build results and remaining precision/reference checks.
 
 ## Validation of the Version 0 examples
 

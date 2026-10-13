@@ -66,10 +66,12 @@ amplitude/kinematics libraries, YAML-driven phase space, an external
 Cuba/Vegas backend. Higher-multiplicity catalogue generation is available, while every
 new process still needs reviewed physics mappings.
 
-`emep_emepz` is the integration example. `gg_ggg` is an amplitude example with
+`emep_emepz` and the integrated MG5 3.8.1 `mummup_vmvmxttxh` are integration
+examples. `gg_ggg` is an amplitude example with
 an unfinished integration mapping. Neither compilation nor a smoke calculation
 alone establishes a validated physical prediction.
 
 The source layout and extension boundaries are described in
 [Development](development.html). Preview scope and review points are described in
-[About this preview](publication.html).
+[Publication status](publication.html), including the 13 October 2026 integration
+and [validation record](validation-20261013.html).

@@ -19,6 +19,17 @@ and process-root include paths. Fortran module files belong to each target's
 binary directory. Keep model/HELAS routines process-local until their symbols,
 model dependence and gauge-specific variants are reviewed for safe reuse.
 
+## Shared random-number interfaces
+
+PCG is separated from BASES under `common/random`. The C target `fdmc::pcg`
+exports `fdmc_pcg.h`; the Fortran wrapper is `fdmc_fortran::random`.
+The C header provides C++ linkage support and requires compiler support for
+128-bit integers. Future C++/CUDA consumers can build on this boundary; a CUDA
+backend is not implemented. Cuba continues to use its own RNG.
+
+Public/private source export and push guards are described in
+[Publication status](publication.html).
+
 ## Future development
 
 | Direction | Boundary to preserve |

@@ -11,6 +11,17 @@ It is not a software release or a claim of independent physics validation.
 
 Documentation and site assets: BSD-3-Clause; see LICENSE.
 
+## Integrated software status (13 October 2026)
+
+The local Fortran checkout now includes the recovered MG5 3.8.1
+`mummup_vmvmxttxh` update, shared PCG interfaces and separate public/private
+publication tooling. A BASES-free public source candidate has been verified
+locally; software source has not been published by this documentation update.
+
+See [publication status](docs/publication.md) and the
+[integration validation record](docs/validation-20261013.md) for passed checks
+and remaining physics comparisons.
+
 ## Managing references
 
 Maintain bibliographic metadata in `docs/_data/references.json`. The References

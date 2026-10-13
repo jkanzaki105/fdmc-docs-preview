@@ -36,6 +36,12 @@ at least two outgoing particles. MG5 `TMP_JAMP` intermediates and helicity
 tables must remain intact. Unsupported input forms fail rather than guessing
 colour or dimension information.
 
+The integrated adapter also handles MG5 3.8.1 split `GET_AMP`,
+`GET_JAMP` and `GET_MATRIX` routines and literal packed colour factors.
+Generated drivers use the shared optional-backend build helper. The integrated
+2→5 example supplies reviewed external momentum subsets and particle masses
+and widths; these inputs still require explicit process-specific review.
+
 ## Complete the process physics
 
 Generated runtime, CMake, drivers and tests are scaffolding. Review every
