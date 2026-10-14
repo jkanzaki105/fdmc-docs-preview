@@ -16,11 +16,18 @@ or BASES backend is needed. The public samples are `emep_emepz` and
 Run from the software root:
 
 ```sh
-cmake -S . -B build-points -DCMAKE_BUILD_TYPE=Release   -DFDMC_FORTRAN_BUILD_BASES=OFF -DFDMC_FORTRAN_ENABLE_CUBA=OFF
+cmake -S . -B build-points -DCMAKE_BUILD_TYPE=Release \
+  -DFDMC_FORTRAN_BUILD_BASES=OFF -DFDMC_FORTRAN_ENABLE_CUBA=OFF
 cmake --build build-points -j 4
 mkdir -p runs/points
-python3 tools/fdmc-points --process emep_emepz --build-dir build-points generate   --param-card processes/emep_emepz/cards/param_card.dat   --generator rambo --sqrts 1000 --points 100 --seed 20261015 --stream 1   --output runs/points/emep.dat
-python3 tools/fdmc-points --process emep_emepz --build-dir build-points evaluate   --param-card processes/emep_emepz/cards/param_card.dat   --input runs/points/emep.dat --output runs/points/emep.fd.values.dat   --label FD --details
+python3 tools/fdmc-points --process emep_emepz --build-dir build-points generate \
+  --param-card processes/emep_emepz/cards/param_card.dat \
+  --generator rambo --sqrts 1000 --points 100 --seed 20261015 --stream 1 \
+  --output runs/points/emep.dat
+python3 tools/fdmc-points --process emep_emepz --build-dir build-points evaluate \
+  --param-card processes/emep_emepz/cards/param_card.dat \
+  --input runs/points/emep.dat --output runs/points/emep.fd.values.dat \
+  --label FD --details
 ```
 
 RAMBO produces check points independently of diagram mappings; its recorded
@@ -64,9 +71,17 @@ gauge (for example `set gauge unitary`). Verify its proc card; a directory name
 is not evidence of the gauge. Then:
 
 ```sh
-python3 tools/build_mg5_point_reference.py /path/to/unitary_standalone   --pdgs processes/emep_emepz/cards/external_particles.dat   --build-dir /tmp/emep-unitary-reference
-python3 tools/fdmc-points --process emep_emepz   --executable /tmp/emep-unitary-reference/build/mg5_points evaluate   --param-card processes/emep_emepz/cards/param_card.dat   --input runs/points/emep.dat --output runs/points/emep.unitary.values.dat   --label unitary
-python3 tools/compare_point_values.py   runs/points/emep.fd.values.dat runs/points/emep.unitary.values.dat   --rtol 1e-8 --atol 1e-20 --report runs/points/comparison.json
+python3 tools/build_mg5_point_reference.py /path/to/unitary_standalone \
+  --pdgs processes/emep_emepz/cards/external_particles.dat \
+  --build-dir /tmp/emep-unitary-reference
+python3 tools/fdmc-points --process emep_emepz \
+  --executable /tmp/emep-unitary-reference/build/mg5_points evaluate \
+  --param-card processes/emep_emepz/cards/param_card.dat \
+  --input runs/points/emep.dat --output runs/points/emep.unitary.values.dat \
+  --label unitary
+python3 tools/compare_point_values.py \
+  runs/points/emep.fd.values.dat runs/points/emep.unitary.values.dat \
+  --rtol 1e-8 --atol 1e-20 --report runs/points/comparison.json
 ```
 
 The builder compiles the unmodified reference matrix, model and HELAS separately;

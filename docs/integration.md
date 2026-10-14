@@ -17,7 +17,9 @@ scheduler; `--jobs` caps concurrent graph processes.
 Install Cuba separately and build from the software root:
 
 ```sh
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release   -DFDMC_FORTRAN_BUILD_BASES=OFF -DFDMC_FORTRAN_ENABLE_CUBA=ON   -DCUBA_ROOT=/path/to/cuba/prefix
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
+  -DFDMC_FORTRAN_BUILD_BASES=OFF -DFDMC_FORTRAN_ENABLE_CUBA=ON \
+  -DCUBA_ROOT=/path/to/cuba/prefix
 cmake --build build -j 4
 source ./setup.sh
 cd processes/emep_emepz
@@ -30,8 +32,12 @@ BASES. Backend-unavailable requests fail explicitly.
 ## One run: create, execute, inspect, collect
 
 ```sh
-fdmc-run create runs/example   --run-card cards/run_card.dat --param-card cards/param_card.dat   --amp-config cards/amplitude_config_list.dat --ident-card cards/ident_card.dat   --sqrts 1000 --config 0
-fdmc-run execute runs/example   --executable "$FDMC_ROOT/build/processes/emep_emepz/emep_emepz_fortran_driver" --jobs 4
+fdmc-run create runs/example \
+  --run-card cards/run_card.dat --param-card cards/param_card.dat \
+  --amp-config cards/amplitude_config_list.dat --ident-card cards/ident_card.dat \
+  --sqrts 1000 --config 0
+fdmc-run execute runs/example \
+  --executable "$FDMC_ROOT/build/processes/emep_emepz/emep_emepz_fortran_driver" --jobs 4
 fdmc-run status runs/example
 fdmc-run finalize runs/example
 ```
@@ -53,7 +59,8 @@ When graphs are missing or failed, finalization returns failure and writes
 pending work and `retry` for failed work:
 
 ```sh
-fdmc-run retry runs/example   --executable "$FDMC_ROOT/build/processes/emep_emepz/emep_emepz_fortran_driver" --jobs 4
+fdmc-run retry runs/example \
+  --executable "$FDMC_ROOT/build/processes/emep_emepz/emep_emepz_fortran_driver" --jobs 4
 fdmc-run status runs/example
 fdmc-run finalize runs/example
 ```
@@ -91,7 +98,8 @@ Save this as `cards/energy_scan.json`:
 
 ```sh
 fdmc-scan create cards/energy_scan.json scans/energy_001
-fdmc-scan execute scans/energy_001   --executable "$FDMC_ROOT/build/processes/emep_emepz/emep_emepz_fortran_driver" --jobs 4
+fdmc-scan execute scans/energy_001 \
+  --executable "$FDMC_ROOT/build/processes/emep_emepz/emep_emepz_fortran_driver" --jobs 4
 fdmc-scan status scans/energy_001
 fdmc-scan finalize scans/energy_001
 ```
