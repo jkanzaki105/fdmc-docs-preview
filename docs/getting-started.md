@@ -13,23 +13,22 @@ MG5 sources. Other compilers have not been established by this
 preparation. Python tools use the standard library; the topology generator
 supports the FDMC YAML subset rather than arbitrary YAML.
 
-The commands below describe the software workflow. They require access to the
-separate private software repository and cannot be run from this documentation-only
-repository. Run them from the software repository root.
+The commands below run in the separate Fortran software repository.
+They cannot be run from this documentation-only repository.
 
 ## Clean build
 
 ```sh
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DFDMC_FORTRAN_ENABLE_BASES=OFF \
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DFDMC_FORTRAN_BUILD_BASES=OFF \
   -DFDMC_FORTRAN_ENABLE_CUBA=ON -DCUBA_ROOT=/path/to/cuba/prefix
 cmake --build build -j 4
 ctest --test-dir build --output-on-failure
 ```
 
-By default all three processes are built; Cuba is optional and disabled by default.
+By default both public processes are built; Cuba is optional and disabled by default.
 BASES defaults on when its private source directory exists. The command above
 selects a public-compatible Cuba build. A process-specific build can select
-`emep_emepz`, `gg_ggg` or `mummup_vmvmxttxh` with
+`emep_emepz` or `mummup_vmvmxttxh` with
 `-DFDMC_FORTRAN_PROCESS=<name>`; `ALL` is the
 default. An unknown name fails at configuration and lists available processes.
 
@@ -54,5 +53,5 @@ Keep `param_card.dat` and `ident_card.dat` together: the MG5 model reader needs
 both. Model initialization may write `param.log` in the working directory.
 
 Cuba must be installed separately. Use [Integration](integration.html) for
-managed runs. Disable both `FDMC_FORTRAN_ENABLE_CUBA` and `FDMC_FORTRAN_ENABLE_BASES` for
+managed runs. Disable both `FDMC_FORTRAN_ENABLE_CUBA` and `FDMC_FORTRAN_BUILD_BASES` for
 backend-free builds. See [publication status](publication.html) for source availability. Use [Physics and validation](physics.html) before interpreting results.

@@ -5,10 +5,10 @@ title: Publication status and preview scope
 
 # Publication status and preview scope
 
-**Updated 13 October 2026.** This repository contains documentation and site
+**Updated 15 October 2026.** This repository contains documentation and site
 assets only. The Fortran integration work has been applied to the local software
-checkout. A separate public source snapshot has been prepared and checked locally,
-but has not yet been committed or pushed as a software release.
+checkout. The BASES-free [source candidate](https://github.com/jkanzaki105/fdmc-version0)
+is published separately. It is a development candidate, not a tagged software release.
 
 FDMC is a provisional project name. This preview supports review of the
 explanations, examples and presentation, and documents techniques used in the
@@ -21,13 +21,23 @@ published [MCPS paper](references.html#mcps).
   future work. This refactoring does not change Cuba's own random-number generator.
 - The previously tested MG5 3.8.1 import
   `mummup_vmvmxttxh` (μ− μ+ → νμ anti-νμ t tbar h) is integrated locally,
-  alongside `emep_emepz` and the amplitude example `gg_ggg`.
+  alongside `emep_emepz`. The current public source excludes `gg_ggg` because
+  its integration is not ready; local gluon work remains separate.
 - YAML phase-space generation, MG5 split amplitude routines, shared drivers and
   run management are included in the integrated checkout.
 - Builds and numerical replay checks passed in the configurations described in
   [the integration validation record](validation-20261013.html). High-statistics
   cross-section comparison remains pending; six high-energy channel precision
   failures are explicitly retained in that record.
+
+## Tools and job management
+
+The [tools catalogue](tools.html) lists import, mapping, point-check and job-management
+commands. [Fixed-point checks](fixed-points.html) describe physical momenta,
+AMP/JAMP, independent MG5 comparison and the role of `check_sa.f`.
+[Managed runs and scans](integration.html) show parallel execution, status, retry
+and completeness checks before finalization. Finite-electron-mass helicity
+mismatches remain unresolved; these checks are not cross-section validation.
 
 ## Public and private source management
 
@@ -46,8 +56,7 @@ The local publication tools provide two safeguards:
 The export uses an explicit source selection and refuses an existing destination.
 These hooks are local safeguards and can be bypassed or removed; they do not
 replace review of the exported files and history. Publish only from the reviewed
-public checkout, with its hook installed. This documentation update publishes
-neither BASES nor software source.
+public checkout, with its hook installed. This documentation repository contains neither BASES nor software source.
 
 ## Review points
 

@@ -67,11 +67,17 @@ Cuba/Vegas backend. Higher-multiplicity catalogue generation is available, while
 new process still needs reviewed physics mappings.
 
 `emep_emepz` and the integrated MG5 3.8.1 `mummup_vmvmxttxh` are integration
-examples. `gg_ggg` is an amplitude example with
-an unfinished integration mapping. Neither compilation nor a smoke calculation
+examples. The unfinished `gg_ggg` sample is excluded from the public source. Neither compilation nor a smoke calculation
 alone establishes a validated physical prediction.
 
 The source layout and extension boundaries are described in
 [Development](development.html). Preview scope and review points are described in
 [Publication status](publication.html), including the 13 October 2026 integration
 and [validation record](validation-20261013.html).
+
+## Tools for reproducible calculations
+
+Use [fixed-point amplitude checks](fixed-points.html) before integration, then
+[managed runs and scans](integration.html) to schedule graph tasks, inspect
+progress, retry failures and verify completeness before collecting results.
+The [tools catalogue](tools.html) lists available commands and their purposes.

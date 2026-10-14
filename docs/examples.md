@@ -9,7 +9,6 @@ title: Examples
 | --- | --- | --- |
 | `emep_emepz` | Amplitude configuration; YAML generation; Cuba smoke runs | Implemented mapping; reference comparison required for release |
 | `mummup_vmvmxttxh` | MG5 3.8.1 helicity and legacy phase-space comparisons | Integrated 2→5 mapping; high-statistics reference comparison pending |
-| `gg_ggg` | Kinematics, colour/amplitude consistency and configurations | Unimplemented process mapping; deliberately stops |
 
 ## e− e+ → e− e+ Z
 
@@ -27,18 +26,6 @@ Every graph uses a deterministic seed. The reported total uncertainty assumes
 independent graph estimates. Increase statistics and compare an established
 reference before treating this as a physical prediction.
 
-## g g → g g g
-
-Build and run its amplitude tests independently:
-
-```sh
-cmake -S . -B build-gg -DFDMC_FORTRAN_PROCESS=gg_ggg -DFDMC_FORTRAN_ENABLE_CUBA=OFF -DFDMC_FORTRAN_ENABLE_BASES=OFF
-cmake --build build-gg -j 4
-ctest --test-dir build-gg --output-on-failure
-```
-
-The consistency check samples MG5 helicities and compares reconstructed
-colour-summed amplitudes. It does not exercise a completed integration map.
 
 ## μ− μ+ → νμ anti-νμ t tbar h
 
@@ -62,3 +49,10 @@ requested precision. A high-statistics cross-section comparison remains pending.
 JSON scan definitions live in `examples/`. Historical standalone phase-space
 source examples are retained under `examples/legacy_phase_space/`; they are
 reference material, not active CMake input or additional validated processes.
+
+## Fixed-point amplitude checks
+
+Both public samples support reproducible momenta and helicity evaluation.
+See [Fixed points](fixed-points.html) for same-point MG5 comparisons and
+[Tools](tools.html) for an overview. `gg_ggg` is retained locally and excluded
+from the current public source because its integration is not ready.

@@ -75,8 +75,8 @@ generation for future high-energy lepton-collider studies.
 ### Relationship to this documentation preview
 
 The integrated local examples include `emep_emepz`, the MG5 3.8.1
-`mummup_vmvmxttxh` 2→5 integration example, and `gg_ggg` amplitude checks
-with an unfinished integration mapping. The new top–Higgs example does not
+`mummup_vmvmxttxh` 2→5 integration example. The unfinished `gg_ggg` sample
+is excluded from the current public source. The new top–Higgs example does not
 supply all SMEFT applications or extreme-forward HELAS benchmarks discussed
 above. The choice of processes for a future release remains open for review.
 See the [13 October 2026 validation record](validation-20261013.html) for
@@ -106,3 +106,7 @@ coherent/incoherent reconstruction and channel weights; changes require
 physics-level review.
 
 See [References](references.html) for the primary paper and its BibTeX record.
+
+For reproducible physical-point checks and known finite-electron-mass helicity
+mismatches, see [Fixed points](fixed-points.html). These checks remain distinct
+from independent cross-section validation.
