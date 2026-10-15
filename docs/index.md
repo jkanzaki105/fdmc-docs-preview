@@ -19,7 +19,70 @@ Physical interference is retained in the full amplitude.
 
 This documentation is a review preview for collaborators. FDMC is a provisional
 project name; the name, page structure and wording are open for discussion.
-The software source remains in a separate private repository.
+The BASES-free software candidate is maintained in the separate
+[fdmc-version0 source repository](https://github.com/jkanzaki105/fdmc-version0).
+
+## FDMC at a glance
+
+Process-specific physics uses shared libraries; tools prepare the inputs,
+check amplitudes and manage integration jobs. The current public source has
+the following structure:
+
+```text
+FDMC — Fortran framework
+│
+├── processes/                 Process-specific physics
+│   ├── emep_emepz/
+│   └── mummup_vmvmxttxh/
+│       ├── cards/             Parameters and calculation settings
+│       ├── source/            MG5 model and HELAS routines
+│       ├── src/               Matrix elements and process interface
+│       └── *.yml              Phase-space mappings
+│
+├── Shared libraries           Reused across processes
+│   ├── amplitude/             AMP/JAMP, colour and fixed-point evaluation
+│   ├── kinematics/            Momenta and Lorentz transformations
+│   ├── phase_space/           YAML-generated phase-space sampling
+│   ├── common/random/         PCG random-number generator
+│   └── utilities/             Command-line and run-card handling
+│
+├── integration/               Numerical integration
+│   ├── common/                Shared integrand and result interfaces
+│   └── cuba/                  Interface to externally installed Cuba
+│
+└── tools/                     Preparation, checks and execution
+    ├── MG5 adapter            Import a new process
+    ├── YAML generators       Prepare phase-space code
+    ├── Fixed-point tools     Generate, evaluate and compare amplitudes
+    └── fdmc-run / fdmc-scan   Run, monitor, retry and collect graph jobs
+```
+
+“Shared libraries” groups directories at the source root; it is not a literal
+directory name. Both process examples follow the same process-local layout.
+
+### From process inputs to results
+
+```text
+MG5 standalone output + reviewed phase-space YAML
+                         │
+                         ▼
+                Process implementation
+                         │
+              ┌──────────┴──────────┐
+              ▼                     ▼
+      Fixed-point checks      Numerical integration
+      FDMC ↔ independent MG5  fdmc-run / fdmc-scan
+              │                     │
+              ▼                     ▼
+      Amplitude comparisons   Cross sections and errors
+```
+
+[Fixed-point checks](fixed-points.html) run without an integration backend.
+[Integration and job management](integration.html) use the process amplitudes
+and reviewed mappings to run graph tasks, monitor progress, retry failures and
+collect complete results. The branches can be executed independently;
+amplitude agreement alone does not establish integration convergence.
+The [tools catalogue](tools.html) lists the available commands and their uses.
 
 ## Scientific basis
 
